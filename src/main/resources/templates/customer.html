@@ -216,11 +216,11 @@ function checkCookie(cname) {
 </script>
 
 <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-      <nav class="flex items-center justify-between">
+    <div class="max-w-7xl mx-auto py-0 px-4 sm:px-6 lg:px-8">
+      <nav class="lg:flex items-center justify-between">
         <div class="flex items-center">
           <a href="/">
-            <img src="/images/LOGOTERACONT.png" alt="Tera Track" class="h-8 mr-3">
+            <img src="/images/LOGOTERACONT.png" alt="Tera Track" class="h-8 mr-10">
           </a>
           <button class="block lg:hidden focus:outline-none focus:shadow-outline-blue" type="button"
                   aria-label="toggle menu">
@@ -234,29 +234,33 @@ function checkCookie(cname) {
             </svg>
           </button>
         </div>
-        <div class="hidden lg:flex lg:items-center lg:w-auto">
+        <div class="lg:flex lg:items-center lg:w-auto">
           <div class="text-sm lg:flex-grow">
             <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-gray-600 mr-4">
               Home
             </a>
+  
+  
+            
             <div class="relative mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-gray-600 mr-4">
-                <a href="#" data-dropdown class="cursor-pointer">Products</a>
-                <div class="absolute z-10 hidden bg-white rounded-lg shadow-lg">
-                  <a href="/fleet-management" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">
-                    Fleet Management
-                  </a>
-                  <a href="/equipment-tracking" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">
-                    Equipment Tracking
-                  </a>
-                  <a href="/family-tracking" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">
-                    Family Tracking
-                  </a>
-                  <a href="/school-bus-tracking" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">
-                    School Bus Tracking
-                  </a>
-                </div>
-              
+              <a href="#" data-dropdown class="cursor-pointer">Products</a>
+              <div class="absolute z-10 hidden bg-white rounded-lg shadow-lg">
+                <a href="/fleet-management" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">
+                  Fleet Management
+                </a>
+                <a href="/equipment-tracking" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">
+                  Equipment Tracking
+                </a>
+                <a href="/family-tracking" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">
+                  Family Tracking
+                </a>
+                <a href="/school-bus-tracking" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">
+                  School Bus Tracking
+                </a>
               </div>
+            
+            </div>
+  
             <a href="/customer" class="block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-gray-600 mr-4">
               Customer
             </a>
@@ -276,12 +280,7 @@ function checkCookie(cname) {
           <div class="flex">
             <div class="nav-item search-wrapper-2 d-none d-lg-block">
               <button type="button" class="bg-white rounded-full p-2 hover:bg-gray-200 focus:outline-none focus:shadow-outline-purple"
-                      aria-labelledby="search">
-                <svg class="w-6 h-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                     stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                      d="M15.5 15.5L20 20l-4.5-4.5m-2.8-2.8a5.5 5.5 0 1 1-7.8 0 5.5 5.5 0 0 1 7.8 0z"/>
-                </svg>
+                      aria-labelledby="">
               </button>
               <form action="/search" method="GET">
                 <input type="text" name="search_string" placeholder="Search Text"
@@ -294,14 +293,42 @@ function checkCookie(cname) {
       </nav>
     </div>
   </header>
+  
   <script>
-
+  
     const dropdownTrigger = document.querySelector('[data-dropdown]');
   const dropdownMenu = dropdownTrigger.nextElementSibling;
   
   dropdownTrigger.addEventListener('click', () => {
     dropdownMenu.classList.toggle('hidden');
   });
+  
+  const toggleButton = document.querySelector('button[aria-label="toggle menu"]');
+  const menu = document.querySelector('nav.hide');
+  
+  
+  
+    const openNavButton = document.querySelector('.open-nav-button');
+  const closeNavButton = document.querySelector('.close-nav-button');
+  const navMenu = document.querySelector('.nav-menu');
+  // Initially hide the close button
+  closeNavButton.style.display = 'none';
+  
+  // Add click event listener to open button
+  openNavButton.addEventListener('click', () => {
+    navMenu.style.display = 'block';
+    openNavButton.style.display = 'none';
+    closeNavButton.style.display = 'block';
+  });
+  
+  // Add click event listener to close button
+  closeNavButton.addEventListener('click', () => {
+    navMenu.style.display = 'none';
+    openNavButton.style.display = 'block';
+    closeNavButton.style.display = 'none';
+  });
+  
+  
   
   </script>
 

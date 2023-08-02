@@ -24,10 +24,11 @@
   <link href="assets2/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets2/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets2/vendor/simple-datatables/style.css" rel="stylesheet">
-
   <script type="text/javascript" src="js/websiteVisits.js"></script>
   <script async src="https://api.countapi.xyz/hit/TeraTrack/9caab69e-8574-4b8c-a184-871f99e39b79?callback=websiteVisits"></script>
 
+
+  <script src="/webjars/chartjs/3.5.0/dist/chart.min.js"></script>
   <!-- Template Main CSS File -->
   <link href="assets2/css/style.css" rel="stylesheet">
        <!--Style of resert page viewers-->
@@ -50,6 +51,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  
 </head>
 
 <body>
@@ -322,47 +324,36 @@
 
     // 👇️ Tomato, Broccoli, Cauliflower
     const maxNumber = span.textContent;
+   
+///
+// Sample data
+const categories =[[${getDataByDate}]];
+const data = [[${getCounts}]];
 
-    Highcharts.chart('container', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Organization'
-        },
-        subtitle: {
-            text: 'Details'
-        },
-        xAxis: {
-            categories: [[${getDataByDate}]],
+// Create the chart
+Highcharts.chart('container', {
+  chart: {
+    type: 'column'
+  },
+  title: {
+    text: 'Column Chart'
+  },
+  xAxis: {
+    categories: categories
+  },
+  yAxis: {
+    title: {
+      text: 'Values'
+    }
+  },
+  series: [{
+    name: 'Data',
+    data: data
+  }]
+});
 
-        },
-        yAxis: {
-            min: 0,
-            max: maxNumber,
-            title: {
-                text: 'Views'
-            }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} K</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: 'Date',
-            data: [[${getCounts}]]
-        }]
-      });
+////
+   
     });
 </script>
 

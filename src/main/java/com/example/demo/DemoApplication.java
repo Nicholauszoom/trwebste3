@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.Serializable;
 
-@SpringBootApplication
+@SpringBootApplication 
 public class DemoApplication  {
 
 

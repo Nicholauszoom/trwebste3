@@ -187,8 +187,9 @@ public class AdminController {
         model.addAttribute("getDateBydate",pageVisitService.getDateByDate(sendDate));
         model.addAttribute("getDataByDate",getDataByDate);
 
-        System.out.println("Hiiii - "+getDataByDate);
-                System.out.println("viewers "+ getCounts);
+        System.out.println("Date array - "+getDataByDate);
+                System.out.println("viewers array "+ getCounts);
+                 System.out.println("maxdata "+ getMaxData);
 
         return "tera-home";
     }

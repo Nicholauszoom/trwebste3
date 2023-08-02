@@ -267,8 +267,10 @@ text-align: justify;
     height: 400px; /* set the height you want */
     width: 100%; /* make the slides cover the full width of the container */
     object-fit: cover; /* make sure the images fill the entire slide */
+    background-color: rgba(0, 0, 0, 0.5); /* Change the opacity to adjust brightness */
     
   }
+ 
 
 </style>
 
@@ -342,11 +344,11 @@ window.addEventListener('load',fadeOutEffect);
 
 
 <header class="bg-white shadow">
-  <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-    <nav class="flex items-center justify-between">
+  <div class="max-w-7xl mx-auto py-0 px-4 sm:px-6 lg:px-8">
+    <nav class="lg:flex items-center justify-between">
       <div class="flex items-center">
         <a href="/">
-          <img src="/images/LOGOTERACONT.png" alt="Tera Track" class="h-8 mr-3">
+          <img src="/images/LOGOTERACONT.png" alt="Tera Track" class="h-8 mr-10">
         </a>
         <button class="block lg:hidden focus:outline-none focus:shadow-outline-blue" type="button"
                 aria-label="toggle menu">
@@ -407,11 +409,6 @@ window.addEventListener('load',fadeOutEffect);
           <div class="nav-item search-wrapper-2 d-none d-lg-block">
             <button type="button" class="bg-white rounded-full p-2 hover:bg-gray-200 focus:outline-none focus:shadow-outline-purple"
                     aria-labelledby="">
-              <svg class="w-6 h-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                   stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                    d="M15.5 15.5L20 20l-4.5-4.5m-2.8-2.8a5.5 5.5 0 1 1-7.8 0 5.5 5.5 0 0 1 7.8 0z"/>
-              </svg>
             </button>
             <form action="/search" method="GET">
               <input type="text" name="search_string" placeholder="Search Text"
@@ -433,6 +430,33 @@ const dropdownMenu = dropdownTrigger.nextElementSibling;
 dropdownTrigger.addEventListener('click', () => {
   dropdownMenu.classList.toggle('hidden');
 });
+
+const toggleButton = document.querySelector('button[aria-label="toggle menu"]');
+const menu = document.querySelector('nav.hide');
+
+
+
+  const openNavButton = document.querySelector('.open-nav-button');
+const closeNavButton = document.querySelector('.close-nav-button');
+const navMenu = document.querySelector('.nav-menu');
+// Initially hide the close button
+closeNavButton.style.display = 'none';
+
+// Add click event listener to open button
+openNavButton.addEventListener('click', () => {
+  navMenu.style.display = 'block';
+  openNavButton.style.display = 'none';
+  closeNavButton.style.display = 'block';
+});
+
+// Add click event listener to close button
+closeNavButton.addEventListener('click', () => {
+  navMenu.style.display = 'none';
+  openNavButton.style.display = 'block';
+  closeNavButton.style.display = 'none';
+});
+
+
 
 </script>
 <!--nvigation bar end -->
@@ -512,7 +536,7 @@ dropdownTrigger.addEventListener('click', () => {
         <div class="absolute inset-x-[15%] bottom-4 text-center text-light font-bold text-3xl py-1 md:block">
           <a href="https://vts.ttel.co.tz/" class="btn primary-btn">START TRACK</a>
           <h5 class="text-xl">YOUR GPS TRACKING TELEMATICS IOT COMPANY</h5>
-          <p>Teratrack will help your to increase profit in your bussiness</p>
+          <p>Teratrack Tanzania will help your to increase profit in your bussiness</p>
         </div>
       </div>
       <div class="swiper-slide">
@@ -520,7 +544,7 @@ dropdownTrigger.addEventListener('click', () => {
         <div class="absolute inset-x-[15%] bottom-4 text-center text-light font-bold text-3xl py-1 md:block">
           <a href="https://vts.ttel.co.tz/" class="btn primary-btn">START TRACK</a>
           <h5 class="text-xl">YOUR GPS TRACKING TELEMATICS IOT COMPANY</h5>
-          <p>Teratrack will help to improve your customer service in bussiness </p>
+          <p>Teratrack will be near your to ensure effective tracking of facilities</p>
         </div>
       </div>
       <div class="swiper-slide">
@@ -528,7 +552,7 @@ dropdownTrigger.addEventListener('click', () => {
         <div class="absolute inset-x-[15%] bottom-4 text-center text-light font-bold text-3xl py-1 md:block">
           <a href="https://vts.ttel.co.tz/" class="btn primary-btn">START TRACK</a>
           <h5 class="text-xl">YOUR GPS TRACKING TELEMATICS IOT COMPANY</h5>
-          <p>Teratrack will be near your to ensure effective tracking of facilities</p>
+          <p>Teratrack will be near your to ensure efficient fleet management</p>
         </div>
       </div>
 
@@ -537,7 +561,7 @@ dropdownTrigger.addEventListener('click', () => {
         <div class="absolute inset-x-[15%] bottom-4 text-center text-light font-bold text-3xl py-1 md:block">
           <a href="https://vts.ttel.co.tz/" class="btn primary-btn">START TRACK</a>
           <h5 class="text-xl">YOUR GPS TRACKING TELEMATICS IOT COMPANY</h5>
-          <p>Teratrack will ensure effective tracking of the performance of drivers </p>
+          <p> Teratrack will ensure effective and efficient tracking of the cargo</p>
         </div>
       </div>
 
@@ -546,7 +570,7 @@ dropdownTrigger.addEventListener('click', () => {
         <div class="absolute inset-x-[15%] bottom-4 text-center text-light font-bold text-3xl py-1 md:block">
           <a href="https://vts.ttel.co.tz/" class="btn primary-btn">START TRACK</a>
           <h5 class="text-xl">YOUR GPS TRACKING TELEMATICS IOT COMPANY</h5>
-          <p>Welcome teratrack  for effective tracking of your facilities in bussiness</p>
+          <p>Teratrack will ensure effective tracking of the performance of drivers </p>
         </div>
       </div>
 
@@ -555,7 +579,7 @@ dropdownTrigger.addEventListener('click', () => {
         <div class="absolute inset-x-[15%] bottom-4 text-center text-light font-bold text-3xl py-1 md:block">
           <a href="https://vts.ttel.co.tz/" class="btn primary-btn">START TRACK</a>
           <h5 class="text-xl">YOUR GPS TRACKING TELEMATICS IOT COMPANY</h5>
-          <p>Teratrack will be near your to ensure effective tracking of facilities</p>
+          <p>Teratrack provides realtime tracking and support in tracking</p>
         </div>
       </div>
       <div class="swiper-slide">
@@ -563,7 +587,7 @@ dropdownTrigger.addEventListener('click', () => {
         <div class="absolute inset-x-[15%] bottom-4 text-center text-light font-bold text-3xl py-1 md:block">
           <a href="https://vts.ttel.co.tz/" class="btn primary-btn">START TRACK</a>
           <h5 class="text-xl">YOUR GPS TRACKING TELEMATICS IOT COMPANY</h5>
-          <p>Teratrack will be near your to ensure effective tracking of facilities</p>
+          <p> Teratrack will help to improve your customer service in bussiness</p>
         </div>
       </div>
     </div>
