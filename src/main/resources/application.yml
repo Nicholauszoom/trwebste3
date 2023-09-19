@@ -80,10 +80,11 @@ spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
 
 spring.jpa.properties.hibernate.jdbc.time_zone: UTC
 #
-spring.mail.host : localhost
-spring.mail.port : 1025
-spring.mail.userName : hello
-spring.mail.password : hello
+spring.mail.host : smtp.gmail.com
+spring.mail.port : 
+
+spring.mail.userName : nicholaussomi5
+spring.mail.password : rjxfmhmlcwzrdmhi
 spring.mail.properties.mail.smtp.auth: true
 spring.mail.properties.mail.smtp.starttls.enable: true
 

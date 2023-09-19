@@ -6,6 +6,7 @@ import com.example.demo.Service.PageVisitService;
 import com.example.demo.appuser.AppUser;
 import com.example.demo.appuser.AppUserRepository;
 import com.example.demo.appuser.AppUserRole;
+import com.example.demo.email.EmailService;
 import com.example.demo.global.GlobalData;
 import com.example.demo.model.Comment;
 import com.example.demo.model.Dto;
@@ -64,6 +65,13 @@ public class AdminController {
     @Autowired
     AppUserRepository userRepository;
   
+@Autowired
+private EmailService emailService;
+
+public  void CommentController(CommentRepository commentRepository, EmailService emailService) {
+    this.commentRepository = commentRepository;
+    this.emailService = emailService;
+}
 
 
 
@@ -209,6 +217,12 @@ public class AdminController {
         return "redirect:/adminViewComment";
     }
 
+    @GetMapping("/report")
+    public String generateReport(){
+        
+        return "report";
+    }
+
 
    /* @GetMapping("/adminViewComment/update/{id}")
     public String updateComment(@PathVariable int id,Model model){
@@ -242,7 +256,14 @@ public class AdminController {
         comment.setSendTime(new Timestamp(new Date().getTime()));
         model.addAttribute("dto", dto);
         model.addAttribute("dto",new Dto());
+
+        // Send email notification
+    //  emailService.send (buildEmail("nicholauszoom95@gmail.com", "A new comment has been posted: " + comment.getMessage()));
+    //  ("nicholauszoom95@gmail.com", "A new comment has been posted: " + comment.getMessage());
         return "commentAdd";
+
+      
+      
     }
 
    /*@PostMapping("/POST")

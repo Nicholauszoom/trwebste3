@@ -270,8 +270,171 @@ text-align: justify;
     background-color: rgba(0, 0, 0, 0.5); /* Change the opacity to adjust brightness */
     
   }
- 
 
+  #statistics-section {
+    /* Add styles for positioning, size, background, etc. */
+    background-color: #f5f5f5;
+  color: #f3f4f6;
+
+  }
+  #statistics-section {
+    font-family: Arial, sans-serif;
+  }
+  
+  #statistics-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  #statistics-section h1 {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  #statistics-section span {
+    font-size: 40px;
+    transition: 0.5s ease-in-out;
+  }
+  
+  #statistics-section span:hover {
+    color: #3f0e0e; /* Example: Change color on hover */
+  }
+ 
+  #statistics-section .statistic {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #statistics-section .statistic i {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  #statistics-section .count {
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+  #statistics-section .label {
+    font-size: 40px;
+  }
+
+  @media (max-width: 900px) {
+    #statistics-section .statistic {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    #statistics-section .statistic i {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+#statistics-section {
+  display: flex;
+  justify-content: center; /* Change to center for equal spacing */
+  align-items: center;
+}
+
+#statistics-section .statistic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 30px; /* Adjust the margin value as desired */
+}
+
+#statistics-section .statistic-icon {
+  font-size: 32px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+#statistics-section .statistic-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #231a41;
+}
+
+#statistics-section .statistic-label {
+  font-size: 14px;
+  color: #1f1f48;
+  text-align: center;
+}
+
+#testimonies-section {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+#testimonies-section  .testimony {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#testimonies-section  .testimony.active {
+  opacity: 1;
+}
+
+#testimonies-section  .testimony-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#testimonies-section  .testimony-content p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#testimonies-section  .testimony-author {
+  font-size: 14px;
+  font-style: italic;
+}
+#testimonies-section i {
+  font-size: 50px;
+  color: #555;
+  
+  
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.slide-out {
+  animation: slideOut 0.5s ease-in-out forwards;
+}
 </style>
 
 <div id="cookies-wrapper" class="d-none">
@@ -622,8 +785,8 @@ var mySwiper = new Swiper('#carouselDarkVariant', {
 
   <div class="text-center pt-8 pb-4">
 
-    <h1 class="text-gray font-bold text-3xl py-2">
-     SERVICES
+    <h1 class="text-gray-700 font-bold text-3xl py-2">
+     OUR  SERVICE
      </h1>
      </div>
     
@@ -712,7 +875,7 @@ var mySwiper = new Swiper('#carouselDarkVariant', {
         TERATRACK guaranteed to track Your cargo and inform for any changes
       </p>
 
-      <a href="/asset-tracking" class="uppercase border border-gray-500 text-gray-600 text-lg py-4 px-12 rounded transition transition-all hover:bg-gray-800 hover:text-white">
+      <a href="/equipment-tracking" class="uppercase border border-gray-500 text-gray-600 text-lg py-4 px-12 rounded transition transition-all hover:bg-gray-hover:text-white">
           Keep Reading
       </a>
   </div>
@@ -772,7 +935,7 @@ var mySwiper = new Swiper('#carouselDarkVariant', {
       />
 
       <h2 class="text-gray-700 font-bold text-3xl py-2">
-       LATRA-VTS
+       Latra-vts
       </h2>
 
 
@@ -809,13 +972,16 @@ var mySwiper = new Swiper('#carouselDarkVariant', {
   
 </div>
 
+
+
        <!--HEADING FEATURES-->
+
 
 
 <div class="text-center pt-8 pb-4">
 
-<h1 class="text-gray font-bold text-3xl py-2">
- FEATURES
+<h1 class="text-gray-700 font-bold text-3xl py-2">
+ ABOUT
  </h1>
  </div>
 
@@ -928,6 +1094,145 @@ var mySwiper = new Swiper('#carouselDarkVariant', {
 
 
 </section>
+
+
+<div class="text-center pt-0 pb-0">
+
+  <h1 class="text-gray-700 font-bold text-3xl py-2">
+  TESTIMONIES
+   </h1>
+   </div>
+  
+
+<!--TESTMMONIALS-->
+<div id="testimonies-section">
+  
+
+  <div class="testimony">
+    <div class="testimony-content">
+      <i class="fa fa-user-circle-o"></i> 
+      <p><center>My all time Favorite Tracking company. Till today i can still track my kids daily routine just to make sure he is safe.</center></p>
+      <span class="testimony-author">Sara Wilsson</span>
+     
+    </div>
+    
+  </div>
+
+  <div class="testimony">
+    <div class="testimony-content">
+      <i class="fa fa-user-circle-o"></i> 
+      <p><center>Tera Technologies have helped me installing Tracking devices into my vans since most of time the drivers have been using them for their own benefit and come here with empty tanks, now i can manage them.</center></p>
+      <span class="testimony-author">Store Owner</span>
+    </div>
+
+  </div>
+
+  <div class="testimony">
+    <div class="testimony-content">
+      <i class="fa fa-user-circle-o"></i> 
+      <p><center>Thanks to Tera Technologies for the tracking devices installment now i can Get track to whoever steals my Bicycles at my store.</center></p>
+      <span class="testimony-author">Entrepreneur</span>
+    </div>
+
+  </div>
+  <!-- Repeat the structure for additional testimonies -->
+</div>
+<script>
+ // JavaScript code
+const testimonies = document.querySelectorAll('.testimony');
+let currentIndex = 0;
+
+function showTestimony(index) {
+  testimonies.forEach((testimony, i) => {
+    if (i === index) {
+      testimony.classList.add('active');
+    } else {
+      testimony.classList.remove('active');
+    }
+  });
+}
+
+function nextTestimony() {
+  currentIndex = (currentIndex + 1) % testimonies.length;
+  showTestimony(currentIndex);
+}
+
+// Automatically transition to the next testimony every 5 seconds
+setInterval(nextTestimony, 5000);
+</script>
+
+
+
+<!--
+<div class="text-center pt-0 pb-0">
+
+  <h1 class="text-gray-700 font-bold text-3xl py-2">
+  OUR
+   </h1>
+   </div>
+  
+  
+
+
+<div id="statistics-section">
+<div class="statistic">
+<div class="statistic-icon">
+<i class="fas fa-users"></i>
+</div>
+<div class="statistic-info">
+<span class="statistic-value" id="employee-count">0</span>
+<span class="statistic-label">Number of Employees</span>
+</div>
+</div>
+
+<div class="statistic">
+<div class="statistic-icon">
+<i class="fas fa-folder"></i>
+</div>
+<div class="statistic-info">
+<span class="statistic-value" id="project-count">0</span>
+<span class="statistic-label">Number of Projects</span>
+</div>
+</div>
+
+<div class="statistic">
+<div class="statistic-icon">
+<i class="fas fa-calendar-alt"></i>
+</div>
+<div class="statistic-info">
+<span class="statistic-value" id="experience-years">0</span>
+<span class="statistic-label">Years of Experience</span>
+</div>
+</div>
+</div>
+<script>
+// Example using jQuery library
+$(document).ready(function() {
+// Function to animate the counting effect
+function animateCount(element, startValue, endValue, duration) {
+$({ count: startValue }).animate({ count: endValue }, {
+duration: duration,
+step: function() {
+  $(element).text(Math.floor(this.count));
+}
+});
+}
+
+// Call the animateCount function for each statistic
+animateCount('#employee-count', 0, 100, 2000); // Example values, adjust accordingly
+animateCount('#project-count', 0, 50, 2000);
+animateCount('#experience-years', 0, 10, 2000);
+});
+</script>
+-->
+
+
+
+      <!--HEADING INFO-->
+
+
+
+     
 
 
 
