@@ -32,3 +32,7 @@ curl --location --request POST 'localhost:8080/api/v1/registration' \
 }'
 ```
 
+
+tera website info: -
+           "username":info@tera.co
+           "password":teratech
