@@ -52,7 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/","/static/**","/features","/fleet-management", "/task-management","/aboutUs","/contactUs","/login","/register","/latra-vts","/equipment-tracking","/family-tracking","/customer","/school-bus-tracking","/Vehicle","/testimonies","/session","/forgot-password**","reset-password**").permitAll()
+                .antMatchers("/","/static/**","/features","/fleet-management", "/task-management","/aboutUs","/contactUs","/login","/register","/latra-vts","/equipment-tracking","/family-tracking","/customer","/school-bus-tracking","/Vehicle","/testimonies","/session","/forgot-password**","reset-password**","/style.css","/bundle.js").permitAll()
                 .antMatchers("/userhome").authenticated()
               /*  .antMatchers("/admin**").hasRole("ADMIN")
                 .antMatchers("/user**").hasRole("USER")*/
