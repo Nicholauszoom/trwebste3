@@ -21,84 +21,87 @@
   >
     <!-- ===== Header Start ===== -->
     <header
-  class="g s r vd ya cj"
-  :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
-  @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
->
-  <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
-    <div class="vd to/4 tc wf yf">
-      <a href="/">
-        <img class="om" src="/images/LOGOTERACONT.png" alt="Logo Light" />
-        <img class="xc nm" src="images/logo-dark.svg" alt="Logo Dark" />
-      </a>
-
-      <!-- Hamburger Toggle BTN -->
-      <button class="po rc" @click="navigationOpen = !navigationOpen">
-        <span class="rc i pf re pd">
-          <span class="du-block h q vd yc">
-            <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
-            <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
-            <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+    class="g s r vd ya cj"
+    :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+    @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+  >
+    <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+      <div class="vd to/4 tc wf yf">
+        <a href="/">
+          <img class="om" src="/images/LOGOTERACONT.png" alt="Logo Light" />
+          <img class="xc nm" src="images/logo-dark.svg" alt="Logo Dark" />
+        </a>
+  
+        <!-- Hamburger Toggle BTN -->
+        <button class="po rc" @click="navigationOpen = !navigationOpen">
+          <span class="rc i pf re pd">
+            <span class="du-block h q vd yc">
+              <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+              <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+              <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+            </span>
+            <span class="du-block h q vd yc lf">
+              <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+              <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+            </span>
           </span>
-          <span class="du-block h q vd yc lf">
-            <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
-            <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
-          </span>
-        </span>
-      </button>
-      <!-- Hamburger Toggle BTN -->
-    </div>
-
-    <div
-      class="vd wo/4 sd qo f ho oo wf yf"
-      :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
-    >
-      <nav>
-        <ul class="tc _o sf yo cg ep">
-          <li><a href="/" class="xl" >Home</a></li>
-         
-          <li class="c i" x-data="{ dropdown: false }">
-            <a
-              href="#"
-              class="xl tc wf yf bg"
-              @click.prevent="dropdown = !dropdown"
-              :class="{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }"
-            >
-              Products
-
-              <svg
-              :class="{ 'wh': dropdown }"
-              class="th mm we fd pf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-              </svg>
-            </a>
-
-            <!-- Dropdown Start -->
-            <ul class="a" :class="{ 'tc': dropdown }">
-              <li><a href="/fleet-management" class="xl" :class="{ 'mk': page === 'blog-grid' }"> Fleet Management</a></li>
-              <li><a href="/equipment-tracking" class="xl" :class="{ 'mk': page === 'blog-single' }">Equipment Tracking</a></li>
-              <li><a href="/family-tracking" class="xl" :class="{ 'mk': page === 'signin' }"> Family Tracking</a></li>
-              <li><a href="/school-bus-tracking" class="xl" :class="{ 'mk': page === 'signup' }">School Bus Tracking</a></li>
-              <li><a href="404.html" class="xl" :class="{ 'mk': page === '404' }">404</a></li>
-            </ul>
-            <!-- Dropdown End -->
-          </li>
-          <li><a href="/customer" class="xl">Customer</a></li>
-          <li><a href="/features" class="xl":class="{ 'mk': page === 'home' }">Features</a></li>
-          
-        </ul>
-      </nav>
-
-      <div class="tc wf ig pb no">
-        <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
-          
+        </button>
+        <!-- Hamburger Toggle BTN -->
+      </div>
+  
+      <div
+        class="vd wo/4 sd qo f ho oo wf yf"
+        :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+      >
+        <nav>
+          <ul class="tc _o sf yo cg ep">
+            <li><a href="/" class="xl">Home</a></li>
+           
+            <li class="c i" x-data="{ dropdown: false }">
+              <a
+                href="#"
+                class="xl tc wf yf bg"
+                @click.prevent="dropdown = !dropdown"
+                :class="{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }"
+              >
+                Products
+  
+                <svg
+                :class="{ 'wh': dropdown }"
+                class="th mm we fd pf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                </svg>
+              </a>
+  
+              <!-- Dropdown Start -->
+              <ul class="a" :class="{ 'tc': dropdown }">
+                <li><a href="/fleet-management" class="xl" :class="{ 'mk': page === 'blog-grid' }"> Fleet Management</a></li>
+                <li><a href="/equipment-tracking" class="xl" :class="{ 'mk': page === 'blog-single' }">Equipment Tracking</a></li>
+                <li><a href="/family-tracking" class="xl" :class="{ 'mk': page === 'signin' }"> Family Tracking</a></li>
+                <li><a href="/school-bus-tracking" class="xl" :class="{ 'mk': page === 'signup' }">School Bus Tracking</a></li>
+              </ul>
+              <!-- Dropdown End -->
+            </li>
+            <li><a href="/customer" class="xl">Customer</a></li>
+            <li><a href="/features" class="xl" :class="{ 'mk': page === 'home' }">Features</a></li>
+            <li><a href="/contactUs" class="xl">Contact us</a></li>
+            <li><a href="/aboutUs" class="xl">About us</a></li>
+            
+          </ul>
+        </nav>
+  
+        <div class="tc wf ig pb no">
+          <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
+            
+          </div>
+  <!--
+          <a href="/login" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
+  
+  -->
         </div>
-
-        <a href="/login" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
     <!-- ===== Header End ===== -->
 
@@ -157,82 +160,39 @@
 
         <div class="bb ze ki xn yq mb en">
           <div class="wc qf pn xo ng">
-            <!-- Service Item -->
-            <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="images/REALTIMETRACKINGORG4.png" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Real-Time Tracking</h4>
-              <p>Real time tracking mode represents live data of tracked
-                objects. Information is updated every time when visit a site. Monitored data contains vehicle
-                status, latitude, longitude, altitude, address, speed, connection time, ignition status, fuel
-                consumption, sensor data, nearest geozone and much more.</p>
-            </div>
+           
 
-            <!-- Service Item -->
-            <div class="animate_top sg oi pi zq ml il am cn _m">
-                <img src="https://www.gps-server.net/wp-content/uploads/2022/10/feature-geofences.jpg" alt="Icon" />
-                <h4 class="ek zj kk wm nb _b">Geofences</h4>
-                <p>With geofences you are able to make a virtual perimeter on geographic areas that have specific interest for you. The main reason to have geofences is to control whether the unit stays within it or not, so that when the geofencing unit enters or exits the area a notification is generated. 
-                </p>
-              </div>
-
-            <!-- Service Item -->
-            <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="images/wigets 22.png" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Wigets</h4>
-              <p>Widgets display recent object information which is updated every ten seconds without need to refresh web page. Send commands to control device, view recent events and mileage graph.</p>
-            </div>
-
-            <!-- Service Item -->
-            <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="images/mark important positions.png" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Routes</h4>
-              <p>Routes feature is a helpful tool to mark an important section of the road by drawing virtual path on the map. Additionally, get notifications if vehicle is within or out of route. This feature is useful to analyze vehicle dependency to the road.</p>
-            </div>
-
-            <!-- Service Item -->
-            <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="images/mobile app org2.png" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Mobile Service</h4>
-              <p>Android app with clear interface for GPS tracking for your devices and account management.</p>
-            </div>
-
-            <!-- Service Item -->
-            <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="images/chats representation.png" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Dashboard/Chats</h4>
-              <p>Dashboard is an information management tool that visually tracks, analyzes and displays important data of tracking account. Dashboard is efficient tool to monitor objects, events, maintenance, tasks and mileage in central location.</p>
-            </div>
-
+            
 
              <!-- Service Item -->
-             <div class="animate_top sg oi pi zq ml il am cn _m">
-                <img src="images/proofdelivery.png" alt="Icon" />
-                <h4 class="ek zj kk wm nb _b">Proof of Deliver</h4>
-                <p>Employees can transfer electronic signatures using our mobile tracker app. Receive delivery status updates in real-time</p>
-              </div>
-  
+ <div class="animate_top sg oi pi zq ml il am cn _m">
+  <img src="images/REALTIMETRACKINGORG4.png" alt="Icon" />
+  <h4 class="ek zj kk wm nb _b">Real-Time Tracking</h4>
+  <p>Real time tracking mode represents live data of tracked objects. Information is updated every time when visit a site.</p>
+</div>
+
+<!-- Service Item -->
+<div class="animate_top sg oi pi zq ml il am cn _m">
+    <img src="https://www.gps-server.net/wp-content/uploads/2022/10/feature-geofences.jpg" alt="Icon" />
+    <h4 class="ek zj kk wm nb _b">Geofences</h4>
+    <p>With geofences you are able to make a virtual perimeter on geographic areas that have specific interest for you. The main reason to have geofences is to control whether the unit stays within it or not.
+    </p>
+  </div> 
+
+<!-- Service Item -->
+<div class="animate_top sg oi pi zq ml il am cn _m">
+  <img src="images/wigets 22.png" alt="Icon" />
+  <h4 class="ek zj kk wm nb _b">Wigets</h4>
+  <p>Widgets display recent object information which is updated every ten seconds without need to refresh web page. Send commands to control device, view recent events and mileage graph.</p>
+</div>
+
+
+
               <!-- Service Item -->
               <div class="animate_top sg oi pi zq ml il am cn _m">
-                <img src="images/TASK ORG.png" alt="Icon" />
-                <h4 class="ek zj kk wm nb _b">Task</h4>
-                <p>Tasks make it easy to create and manage entries related to upcoming work which should be accomplished. Set start and end address, priority, task status. Tasks can be managed via GPS Tracker mobile application.</p>
-              </div>
-  
-              <!-- Service Item -->
-              <div class="animate_top sg oi pi zq ml il am cn _m">
-                <img src="images/speed chats.png" alt="Icon" />
-                <h4 class="ek zj kk wm nb _b">Monitor Driving Behavior</h4>
-                <p> Sensors help to expand GPS tracking capabilities. Read vehicle on-board computer data via CAN or get readings from externally connected sensors. Monitor different vehicle data, such as fuel level, RPM, temperature, voltage, iButton, RFID and more. Achieve precise measurements with calibration table and formulas.</p>
-              </div>
-
-
-              
-
-                <!-- Service Item -->
-             <div class="animate_top sg oi pi zq ml il am cn _m">
                 <img src="images/speed chats.png" alt="Icon" />
                 <h4 class="ek zj kk wm nb _b">History</h4>
-                <p>History shows all stored data which server has collected from connected devices for chosen period of time. Software stores information received from GPS tracking devices, such as speed, time, location, stops, reports, events, etc. History is displayed in different ways: visually on the map, in a graph or HTML/XLS format.
+                <p>History shows all stored data which server has collected from connected devices for chosen period of time. Software stores information received from GPS tracking devices, such as speed, time, location, stops, reports. 
                 </p>
               </div>
   
@@ -252,10 +212,10 @@
                 <h4 class="ek zj kk wm nb _b">Expenses</h4>
                 <p> Use the Expenses function to track the amount spent on an object maintenance. Evaluate the economic benefit of vehicle usage with the Expenditure report on a daily, weekly, or monthly basis.</p>
               </div>
+  
+  
 
-
-
-                        <!-- Service Item -->
+                           <!-- Service Item -->
            <div class="animate_top sg oi pi zq ml il am cn _m">
             <img src="images/Object control org2.png" alt="Icon" />
             <h4 class="ek zj kk wm nb _b">OBJECT CONTROL</h4>
@@ -266,7 +226,7 @@
           <div class="animate_top sg oi pi zq ml il am cn _m">
             <img src="images/REPORTGENERATIONSSORG.png" alt="Icon" />
             <h4 class="ek zj kk wm nb _b">Reports</h4>
-            <p>Get detailed reports about trips, mileage, driving behavior, fuel usage and thefts, activity in particular zone or route. Reports are used for data analysis of particular vehicle or entire group. Reports can be exported or sent instantly to E-mail addresses in HTML/PDF/XLS format.</p>
+            <p>Get detailed reports about trips, mileage, driving behavior, fuel usage and thefts, activity in particular zone or route. Reports are used for data analysis of particular vehicle or entire group. </p>
           </div>
 
           <!-- Service Item -->
@@ -281,14 +241,64 @@
 
 
 
+              <!-- Service Item -->
+              <div class="animate_top sg oi pi zq ml il am cn _m">
+                <img src="images/mark important positions.png" alt="Icon" />
+                <h4 class="ek zj kk wm nb _b">Routes</h4>
+                <p>Routes feature is a helpful tool to mark an important section of the road by drawing virtual path on the map. Additionally, get notifications if vehicle is within or out of route.</p>
+              </div>
+  
+
+             <!-- Service Item -->
+             <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="images/proofdelivery.png" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Proof of Deliver</h4>
+              <p>Employees can transfer electronic signatures using our mobile tracker app. Receive delivery status updates in real-time</p>
+            </div>
+
+            <!-- Service Item -->
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="images/TASK ORG.png" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Task</h4>
+              <p>Tasks make it easy to create and manage entries related to upcoming work which should be accomplished. Set start and end address, priority, task status.</p>
+            </div>
+
+            <!-- Service Item -->
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="images/speed chats.png" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Monitor Driving Behavior</h4>
+              <p> Sensors help to expand GPS tracking capabilities. Read vehicle on-board computer data via CAN or get readings from externally connected sensors. </p>
+            </div>
+
+
+            
+
+            <!-- Service Item -->
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="images/mobile app org2.png" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Mobile Service</h4>
+              <p>Android app with clear interface for GPS tracking for your devices and account management. TeraTrack mobile app is now on playstore.</p>
+            </div>
+
+            <!-- Service Item -->
+            <div class="animate_top sg oi pi zq ml il am cn _m">
+              <img src="images/chats representation.png" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Dashboard/Chats</h4>
+              <p>Dashboard is an information management tool that visually tracks, analyzes and displays important data of tracking account.</p>
+            </div>
+
+
+           
+
+
+
                      <!-- Service Item -->
            <div class="animate_top sg oi pi zq ml il am cn _m">
                 <img src="images/api features org1.png" alt="Icon" />
                 <h4 class="ek zj kk wm nb _b">API</h4>
                 <p>The TeraTrack APIs will enable you to seamlessly integrate the
                     real-time GPS ﬂeet tracking location and other data with your dispatching, payroll,
-                    mobile-resource management, CRM and/or ERP systems. We will provide you with all the sample
-                    codes and documentations needed to get you up and running fast.</p>
+                    mobile-resource management,</p>
               </div>
 
               <!-- Service Item -->
@@ -306,9 +316,7 @@
                 <img src="images/REPORTGENERATIONSSORG.png" alt="Icon" />
                 <h4 class="ek zj kk wm nb _b">DETAIL REPORTS</h4>
                 <p>Get detailed reports about trips, mileage, driving behavior, Get detailed reports about trips, mileage, driving behavior,
-                  fuel usage and thefts, activity in particular zone or route. Reports are used for data analysis of particular vehicle or entire
-                  group. Reports can be exported or sent instantly to E mail address in HTML/PDF/XLS format.fuel usage and thefts, activity in particular zone or route. Reports are used for data analysis of particular vehicle or entire
-                  group. Reports can be exported or sent instantly to E mail address in HTML/PDF/XLS format.</p>
+                  fuel usage and thefts, activity in particular zone or route.</p>
               </div>
             
 

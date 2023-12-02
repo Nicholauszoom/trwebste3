@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Base - Tailwind CSS Startup Template</title>
-  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
+  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet">
+</head>
     <!--tailwind scripts  -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="js/testimonial.js"></script>
@@ -79,12 +80,13 @@
               <li><a href="/equipment-tracking" class="xl" :class="{ 'mk': page === 'blog-single' }">Equipment Tracking</a></li>
               <li><a href="/family-tracking" class="xl" :class="{ 'mk': page === 'signin' }"> Family Tracking</a></li>
               <li><a href="/school-bus-tracking" class="xl" :class="{ 'mk': page === 'signup' }">School Bus Tracking</a></li>
-              <li><a href="404.html" class="xl" :class="{ 'mk': page === '404' }">404</a></li>
             </ul>
             <!-- Dropdown End -->
           </li>
           <li><a href="/customer" class="xl">Customer</a></li>
           <li><a href="/features" class="xl">Features</a></li>
+          <li><a href="/contactUs" class="xl">Contact us</a></li>
+          <li><a href="/aboutUs" class="xl">About us</a></li>
           
         </ul>
       </nav>
@@ -93,8 +95,10 @@
         <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
           
         </div>
-
+<!--
         <a href="/login" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
+
+-->
       </div>
     </div>
   </div>
@@ -111,9 +115,46 @@
           <img src="images/shape-02.svg" alt="shape" class="xc 2xl:ud-block h u p va" />
           <img src="images/shape-03.svg" alt="shape" class="xc 2xl:ud-block h v w va" />
           <img src="images/shape-04.svg" alt="shape" class="h q r" />
-          <img src="images/track where you are.png" alt="tera" class="h q r ua" />
+          <img src="images/track where you are.png" alt="tera" id="tera-image" class="h q r ua" />
         </div>
-
+        <script>
+          // Function to switch the images
+          function switchImages() {
+            // Get the tera image element
+            const teraImage = document.getElementById('tera-image');
+        
+            // Store the current image source and alt text
+            const currentSrc = teraImage.src;
+            const currentAlt = teraImage.alt;
+        
+            // Hide the tera image
+            teraImage.style.display = 'none';
+        
+            // Create a new image element
+            const newImage = document.createElement('img');
+            newImage.src = 'images/PLAY STORE PHONEPLAIN.png'; // Replace with the path to your new image
+            newImage.alt = 'New Image';
+            newImage.className = 'h q r ua';
+        
+            // Insert the new image after the tera image's parent element
+            teraImage.parentNode.insertBefore(newImage, teraImage.nextSibling);
+        
+            // Delay the execution to switch back to the previous image after 7 seconds
+            setTimeout(function() {
+              // Remove the new image
+              newImage.parentNode.removeChild(newImage);
+        
+              // Show the tera image
+              teraImage.style.display = 'block';
+        
+              // Call the switchImages function again after 7 seconds for continuous switching
+              setTimeout(switchImages, 7000);
+            }, 7000);
+          }
+        
+          // Delay the initial execution of the switchImages function after 7 seconds
+          setTimeout(switchImages, 7000);
+        </script>
         <!-- Hero Content -->
         <div class="bb ze ki xn 2xl:ud-px-0">
           <div class="tc _o">
@@ -124,7 +165,7 @@
 
               <div class="tc tf yo zf mb">
                 <a href="https://vts.ttel.co.tz/" class="ek jk lk gh gi hi rg ml il vc _d _l"
-                  >Get Started Now</a
+                  >Teratrack Web</a
                 >
 
                 <span class="tc sf">
@@ -216,9 +257,9 @@
                    
                   </div>
                 </div>
-                <h4 class="ek tj ml il kk wm xl eq lb">
+                <p class="fq">
                   <a href="/family-tracking">Family:TERATRACK guaranteed to tracking your family for protection</a>
-                </h4>
+                <p/>
               </div>
             </div>
 
@@ -245,9 +286,9 @@
                    
                   </div>
                 </div>
-                <h4 class="ek tj ml il kk wm xl eq lb">
-                  <a href="/equipment-tracking">Fleet: TERATRACK provide remote tracking of our customer(s) construction equipments.                  </a>
-                </h4>
+                <p class="fq">
+                  <a href="/equipment-tracking">Fleet: TERATRACK offers remote tracking and monitoring solutions for construction equipment.</a>
+                </p>
               </div>
             </div>
 
@@ -274,8 +315,8 @@
                   
                   </div>
                 </div>
-                <h4 class="ek tj ml il kk wm xl eq lb">Truck:TERATRACK daily make follow-Up to our customers truck for more safetyTips to quickly improve your coding speed.</a>
-                </h4>
+                <p class="fq">Truck: TERATRACK ensures the safety of your truck through remote tracking and monitoring.</a>
+                </p>
               </div>
             </div>
           </div>
@@ -309,9 +350,9 @@
                    
                   </div>
                 </div>
-                <h4 class="ek tj ml il kk wm xl eq lb">
-                  <a href="/equipment-tracking">Cargo:TERATRACK guaranteed to track Your cargo and inform for any changes</a>
-                </h4>
+                <p class="fq">
+                  <a href="/equipment-tracking">Cargo: TERATRACK ensures reliable tracking of your cargo and provides real-time updates on any changes.</a>
+                </p>
               </div>
             </div>
 
@@ -338,16 +379,16 @@
                    
                   </div>
                 </div>
-                <h4 class="ek tj ml il kk wm xl eq lb">
-                  <a href="/latra-vts">Buses: TERATRACK bound with LATRA for the safety of the ground transportation.                  </a>
-                </h4>
+                <p class="fq">
+                  <a href="/latra-vts">Buses: TERATRACK partners with LATRA to enhance the safety of ground transportation.                  </a>
+                </p>
               </div>
             </div>
 
             <!-- Blog Item -->
             <div class="animate_top sg vk rm xm">
               <div class="c rc i z-1 pg">
-                <img class="w-full" src="images/school-bus-homepages.jpg" alt="Blog" />
+                <img class="w-full" src="https://us.123rf.com/450wm/joseh51/joseh511902/joseh51190201118/117320087-auroville-tamil-nadu-january-24-2019-view-of-a-school-bus-from-auroville-driving-in-southern-india.jpg?ver=6g" alt="Blog" />
 
                 <div
                   class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10"
@@ -367,8 +408,8 @@
                   
                   </div>
                 </div>
-                <h4 class="ek tj ml il kk wm xl eq lb">School:TERATRACK guaranteed safety of our customer(s) school buses.</a>
-                </h4>
+                <p class="fq">School: TERATRACK ensures the safety of our customers' school buses with reliable tracking and monitoring solutions.</a>
+                </p>
               </div>
             </div>
           </div>
